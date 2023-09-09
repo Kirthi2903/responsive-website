@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>AVENGER</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                font-family: tahoma;
+                font-size: 15px;
+                line-height: 1.75;
+                margin:0;
+                padding:0;
+            }
+            
+            #timeline{
+                display: flex;
+                background-color: #031725;
+            }
+            #timeline:hover.item{
+                width: 23.3333%;
+            }
+            .item{
+                transform: translate3d(0,0,0);
+                position: relative;
+                width: 25%;
+                height:100vh;
+                min-height: 600px;
+                color: white;
+                overflow: hidden;
+                transition: width 0.5s ease;
+                
+            }
+            .item:before, .item:after{
+                transform: translate3d(0,0,0);
+                content:'';
+                position: absolute;
+                left:0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .item:after{
+                background: rgba(21,126,209,0.85);
+                opacity: 1;
+                transition: opacity 0.5s ease;
+            }
+            .item:before{
+                background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%);
+                z-index: 1;
+                opacity: 0;
+                transform: translate3d(0,0,0) translateY(50%);
+                transition: opacity 0.5s ease, transform 0.5 ease;
+            }
+            .item:hover{
+                width: 30% !important;
+            }
+            .item:hover .content{
+                opacity: 1;
+                transform: translateY(0);
+                transition: all 0.75s ease 0.5s;
+                
+            }
+            .item:hover .bg{
+                filter:grayscale(0);
+            }
+            .content{
+                transform: translate3d(0,0,0) translateY(25px);
+                position: relative;
+                z-index: 1;
+                text-align: center;
+                margin: 0 1.618em;
+                top: 55%;
+                opacity: 0;
+            }
+            .content h1{
+                font-family: tahoma;
+                text-transform: uppercase;
+                color: deepskyblue;
+                font-size: 1.44rem;
+                font-weight: normal;
+                
+            }
+            .year{
+                position: absolute;
+                top:50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                z-index: 1;
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+                
+            }
+            .year p{
+                font-family: tahoma;
+                font-size: 1.728rem;
+                line-height: 0;
+            }
+            .bg{
+                transform: translate3d(0,0,0);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-size: cover;
+                background-position: center center;
+                transition: filter 0.5s ease;
+                filter:grayscale(100%);
+            }
+            p{
+                font-family: tahoma;
+                font-weight: normal;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <section id="timeline">
+            
+            <div class="item">
+                <div class="bg" style="background-image:url(i1.jpg);"></div>
+                <div class="year">
+                    <p>IRON MAN</p>
+                </div>
+                <div class="content">
+                    <h1>TONY STARK</h1>
+                    <p>Co-Founder of the main Avengers team. Former member of the New Avengers, Pym's Mighty Avengers, and the Fifty-States Initiative Mighty Avengers. An alternate adolescent version of the original replaced him for a time until they merged. Current member of the main Avengers team.</p>
+                </div>
+            </div>
+            
+            <div class="item">
+                <div class="bg" style="background-image:url(i2.jpg);"></div>
+                <div class="year">
+                    <p>CAPTAIN</p>
+                </div>
+                <div class="content">
+                    <h1>STEVE GRANT</h1>
+                    <p>Given retroactive "founding member" status in place of the Hulk. Former leader of the Avengers Unity Division and the Black Ops Secret Avengers, as well as former member of the New Avengers. Former member of the main Avengers team.
+</p>
+                </div>
+            </div>
+            
+            <div class="item">
+                <div class="bg" style="background-image:url(i3.jpg);"></div>
+                <div class="year">
+                    <p>SPIDER MAN</p>
+                </div>
+                <div class="content">
+                    <h1>PETER PARKER</h1>
+                    <p>Joined as a reserve member. Former member of the New Avengers, while serving concurrently as a member of the Future Foundation. Former member of the Avengers Unity Division. Former member of the main Avengers team.</p>
+                </div>
+            </div>
+            
+            <div class="item">
+                <div class="bg" style="background-image:url(i4.jpg);"></div>
+                <div class="year">
+                    <p>THOR</p>
+                </div>
+                <div class="content">
+                    <h1>THOR RAGNORK</h1>
+                    <p>Co-Founder of the main Avengers team. Former member of A.I.M.'s New Avengers and the Avengers Unity Division. Current member of the main Avengers team.</p>
+                </div>
+            </div>
+
+        </section>
+    </body>
+</html>
